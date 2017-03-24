@@ -1,4 +1,6 @@
 
+目前数据收录354522条记录
+
 ### functions
 ```php
 array|bool phone(string $phone)
@@ -39,4 +41,5 @@ Array
 ### contact
 更多疑问请+qq群 233415606 or [website http://www.hnphper.com](http://www.hnphper.com)
 
-
+### 其他
+https://github.com/xluohome/phonedata
