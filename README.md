@@ -35,8 +35,9 @@ Array
     [4] => 1
 )
 ```
- * 更新请参考example目录
+ * 更多实例请参考example目录
  * 0 省份 1城市 2邮编 3区号 4号码类型（1移动 2联通 3电信 4电信虚拟运营商 5联通虚拟运营商 6移动虚拟运营商）
+ * 查询失败返回 false
 
 ### contact
 更多疑问请+qq群 233415606 or [website http://www.hnphper.com](http://www.hnphper.com)
