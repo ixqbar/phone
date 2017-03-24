@@ -106,6 +106,7 @@ static int phone_init()
 	int tel_index = 0;
 	rn = fread(&tel_index, 1, 4, fp);
 	if (rn != 4 || tel_index == 0) {
+		fclose(fp);
 		php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 		return FAILURE;
 	}
@@ -123,6 +124,7 @@ static int phone_init()
 		tel = 0;
 		rn = fread(&tel, 1, 4, fp);
 		if (rn != 4 || tel == 0) {
+			fclose(fp);
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 			return FAILURE;
 		}
@@ -130,6 +132,7 @@ static int phone_init()
 		data_index = 0;
 		rn = fread(&data_index, 1, 4, fp);
 		if (rn != 4 || data_index == 0) {
+			fclose(fp);
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 			return FAILURE;
 		}
@@ -138,6 +141,7 @@ static int phone_init()
 		type = -1;
 		rn = fread(&type, 1, 1, fp);
 		if (rn <= 0 || type == -1) {
+			fclose(fp);
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 			return FAILURE;
 		}
@@ -145,6 +149,7 @@ static int phone_init()
 		fseek(fp, data_index, SEEK_SET);
 		rn = fread(buf, 1, 1024, fp);
 		if (rn <= 0) {
+			fclose(fp);
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 			return FAILURE;
 		}
@@ -181,6 +186,8 @@ static int phone_init()
 
 		tel_index += 9;
 	}
+
+	fclose(fp);
 
 	return SUCCESS;
 }
