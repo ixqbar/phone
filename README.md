@@ -1,5 +1,5 @@
 
-目前数据收录354522条记录
+数据库文件请到 https://github.com/xluohome/phonedata/blob/master/phone.dat  下载
 
 ### functions
 ```php
