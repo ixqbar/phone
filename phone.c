@@ -273,15 +273,19 @@ PHP_FUNCTION(phone)
 #else
 	int tel_len = 0;
 #endif
+	char t;
 
 	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &tel_str, &tel_len) == FAILURE
 		|| tel_len < 7) {
 		RETURN_FALSE;
 	}
 
+	t = tel_str[7];
 	tel_str[7] = 0;
 
 	int tel = atoi(tel_str);
+
+	tel_str[7] = t;
 
 	struct PHONE *result;
 	HASH_FIND_INT(PHONE_G(phone), &tel, result);
