@@ -123,7 +123,7 @@ static int phone_init()
 
 		tel = 0;
 		rn = fread(&tel, 1, 4, fp);
-		if (rn != 4 || tel == 0) {
+		if (rn != 4) {
 			fclose(fp);
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Please init your phone dict path in php.ini");
 			return FAILURE;
