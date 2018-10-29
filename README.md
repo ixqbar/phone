@@ -1,4 +1,6 @@
 
+* 效率问题，请使用  https://github.com/jonnywang/goRedisPhone
+
 数据库文件请到 https://github.com/xluohome/phonedata/blob/master/phone.dat  下载
 
 ### functions
